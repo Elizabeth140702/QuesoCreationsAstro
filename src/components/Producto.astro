@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+	nombre: string;
+	tamaño: string;
+	precio: string;
+	imagen: string;
+}
+
+const { nombre, tamaño, precio, imagen } = Astro.props;
+
+
+---
+
+	
+		<div class="product__item">
+			<div class="product__item__pic set-bg" data-setbg={imagen}>
+
+				<ul class="product__hover">
+					<li><a href= {imagen}  class="image-popup"><span class="arrow_expand"></span></a></li>
+					<li><a href="https://api.whatsapp.com/send?phone=523330604000&text=Hola,%20me%20interesa%20pedir%20información%20sobre%20tu%20trabajo%20a%20crochet"  target="_blank"><span class="fa fa-whatsapp"></span></a></li>
+				</ul>
+			</div>
+			<div class="product__item__text">
+				<h6><a href="#">{nombre}</a></h6>
+				<span>{parseInt(tamaño) > 0 ? tamaño + " cm": ""}</span>
+				<div class="product__price">$ {precio}</div>
+			</div>
+		</div>
+	
